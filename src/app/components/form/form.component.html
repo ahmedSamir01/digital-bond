@@ -1,0 +1,58 @@
+<form ngNativeValidate class="contact-us" (ngSubmit)="handleSubmit
+()">
+  <div class="row">
+    <div class="col-md-6 px-2">
+      <label for="name">name <em>&#x2a;</em></label>
+      <input type="text" id="name" required name="name">
+    </div>
+    <div class="col-md-6 px-2">
+      <label for="position">position <em>&#x2a;</em></label>
+      <input type="text" id="position" required name="position">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 px-2 mb-4">
+      <label>availability date <em>&#x2a;</em></label>
+      <p-calendar [required]="true"></p-calendar>
+    </div>
+    <div class="col-md-6 px-2 mb-4">
+      <label>birth date <em>&#x2a;</em></label>
+      <p-calendar [required]="true"></p-calendar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 px-2">
+      <label for="salary">expected salary (EGP) <em>&#x2a;</em></label>
+      <input type="number" min="100" id="salary" required name="salary">
+    </div>
+    <div class="col-md-6 px-2">
+      <label for="address">address <em>&#x2a;</em></label>
+      <input type="text" id="address" required name="address">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 px-2">
+      <label for="phone">phone <em>&#x2a;</em></label>
+      <input type="tel" id="phone" required name="phone">
+    </div>
+    <div class="col-md-6 px-2">
+      <label for="email">email <em>&#x2a;</em></label>
+      <input type="email" id="email" required name="email">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 px-2 mb-4">
+      <label for="marital">marital status <em>&#x2a;</em></label>
+      <select required id="marital" name="marital">
+        <option value="" disabled selected>
+          Select your option</option>
+        <option *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+    </div>
+    <div class="col-md-6 px-2">
+      <label for="attach">CV / Resume <em>&#x2a;</em></label>
+      <input type="file" accept="application/pdf,application/docx" id="attach" required name="attach">
+    </div>
+  </div>
+  <input type="submit" class="submit-button">
+</form>
